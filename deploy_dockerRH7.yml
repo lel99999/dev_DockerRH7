@@ -29,28 +29,43 @@
         msg: "RHEL Enabled Repos: {{ enabled_repos }}"
 
   tasks:
-    - name: Install Development Tools
+    - name: Install Docker Needed Packages
       yum:
-        name: "@Development Tools"
+        name: "{{ item }}"
         state: present
+      with_items:
+        - yum-utils
+        - device-mapper-persistent-data
+        - lvm2
+
+    - name: Install Docker
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - docker
+        - docker-common
+        - docker-selinux
+        - docker-engine-selinux
+        - docker-engine
+        - docker-ce
+
+    - name: Enable Docker Service
+      command: systemctl enable docker.service 
+ 
+#   - name: Install Development Tools
+#     yum:
+#       name: "@Development Tools"
+#       state: present
 #     shell:  yum groupinstall "Development Tools" -y
-    - name: Install X Windows
-      yum:
-        name: "@X Window System"
-        state: present 
-    - name: Install wget
-      yum:
-        name: wget
-        state: present
+#   - name: Install wget
+#     yum:
+#       name: wget
+#       state: present
 #   - name: Install Latest EPEL
 #     shell:  wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -O /tmp/epel-release-latest-7.noarch.rpm
 #   - name: Install epel
 #     shell:  yum -y localinstall /tmp/epel*rpm
-    - name: Install XFCE
-      yum:
-        name: "@Xfce"
-        state: present
-        disable_gpg_check: yes
 
   roles:
     - epel7
