@@ -68,6 +68,7 @@
 #     shell:  yum -y localinstall /tmp/epel*rpm
 
   roles:
+    - dockerRH7
     - epel7
     - python2RH7
     - python3RH7
