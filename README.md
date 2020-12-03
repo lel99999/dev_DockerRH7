@@ -21,6 +21,9 @@ Docker Integration with RHEL 7.x
 
 10) Add to Docker registry - perhaps Docker hub
 
-### INFO:
+#### INFO:
 This is a CLI for use with OpenFaaS - a serverless functions framework for Docker & Kubernetes.<br/>
 ![https://github.com/openfaas/faas-cli](https://github.com/openfaas/faas-cli)
+
+#### Using with Xeon PHI
+
