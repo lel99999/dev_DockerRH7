@@ -26,4 +26,5 @@ This is a CLI for use with OpenFaaS - a serverless functions framework for Docke
 ![https://github.com/openfaas/faas-cli](https://github.com/openfaas/faas-cli)
 
 #### Using with Xeon PHI
+![https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/running-docker-containers-xeon-phi-whitepaper.pdf](https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/running-docker-containers-xeon-phi-whitepaper.pdf)
 
