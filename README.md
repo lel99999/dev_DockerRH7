@@ -1,6 +1,16 @@
 # dev_DockerRH7
 Docker Integration with RHEL 7.x
 
+#### Specific Aspects of Docker
+- PID namespace: Process identifiers and capabilities
+- UTS namespace: Host and domain name
+- MNT namespace: File system access and structure
+- IPC namespace: Process communications over shared memory
+- NET namespace: Network access and structure
+- USR namespace: User names and identifiers
+- chroot(): Controls the location of the file system root
+- cgroups: Resource protection
+
 #### TODO:
 1) Create docker base image of RHEL7<br/>
   1a) Create a full image using tar
