@@ -45,6 +45,18 @@ $sudo docker pull nricklin/ubuntu-gpu-test
 $DOCKER_NVIDIA_DEVICES="--device /dev/nvidia0:/dev/nvidia0 --device /dev/nvidiactl:/dev/nvidiactl --device /dev/nvidia-uvm:/dev/nvidia-uvm"
 sudo docker run $DOCKER_NVIDIA_DEVICES nricklin/ubuntu-gpu-test
 ```
+#### Install Docker Compose
+# https://docs.docker.com/compose/install/
+
+```
+$sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+$sudo chmod +x /usr/local/bin/docker-compose
+
+$sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+
+```
 
 
 #### TODO:
