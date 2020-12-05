@@ -27,7 +27,11 @@ $sudo systemctl enable --now docker.service
 
 $sudo yum list docker-ce --showduplicates | sort -r
 ```
-
+#### Create docker group and add user
+```
+$sudo groupadd docker
+$sudo usermod -aG docker ${USER{}
+```
 
 #### TODO:
 1) Create docker base image of RHEL7<br/>
