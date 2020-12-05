@@ -33,6 +33,20 @@ $sudo groupadd docker
 $sudo usermod -aG docker ${USER{}
 ```
 
+#### Test Docker
+```
+$docker run hello-world
+
+# https://hub.docker.com/r/nricklin/ubuntu-gpu-test
+# Pull down the GPU test image:
+$sudo docker pull nricklin/ubuntu-gpu-test
+
+# Run the test:
+$DOCKER_NVIDIA_DEVICES="--device /dev/nvidia0:/dev/nvidia0 --device /dev/nvidiactl:/dev/nvidiactl --device /dev/nvidia-uvm:/dev/nvidia-uvm"
+sudo docker run $DOCKER_NVIDIA_DEVICES nricklin/ubuntu-gpu-test
+```
+
+
 #### TODO:
 1) Create docker base image of RHEL7<br/>
   1a) Create a full image using tar
