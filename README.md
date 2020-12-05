@@ -11,6 +11,24 @@ Docker Integration with RHEL 7.x
 - chroot(): Controls the location of the file system root
 - cgroups: Resource protection
 
+#### Install on RHEL 7 Specifics
+```
+$sudo subscription-manager register --auto-attach
+
+$sudo subscription-manager repos --enable=rhel-7-server-rpms --enable=rhel-7-server-extras-rpms --enable=rhel-7-server-optional-rpms
+
+$sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+$sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml  
+
+$sudo yum install docker-ce docker-ce-cli containerd.io
+
+$sudo systemctl enable --now docker.service
+
+$sudo yum list docker-ce --showduplicates | sort -r
+```
+
+
 #### TODO:
 1) Create docker base image of RHEL7<br/>
   1a) Create a full image using tar
