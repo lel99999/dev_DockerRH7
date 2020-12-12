@@ -34,6 +34,12 @@ $sudo subscription-manager repos --enable=rhel-7-server-rpms --enable=rhel-7-ser
 $sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 $sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 $sudo yum-config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo  
+###------- NOTE----------
+# edit /etc/yum.repos.d/docker-ce.repo
+# CHANGE:
+# baseurl=https://download.docker.com/linux/rhel/7/$basearch/stable
+# To:
+# baseurl=https://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml
 
 $sudo yum install docker-ce docker-ce-cli containerd.io
 
