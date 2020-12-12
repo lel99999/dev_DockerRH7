@@ -11,7 +11,21 @@ Docker Integration with RHEL 7.x
 - chroot(): Controls the location of the file system root
 - cgroups: Resource protection
 
-#### Install on RHEL 7 Specifics
+#### Install on RHEL 7 (RedHat Default)
+````
+$sudo subscription-manager repos --enable=rhel-7-server-rpms
+$sudo subscription-manager repos --enable=rhel-7-server-extras-rpms
+$sudo subscription-manager repos --enable=rhel-7-server-optional-rpms
+
+$sudo yum install docker device-mapper-libs device-mapper-event-libs
+$sudo systemctl start docker.service
+$sudo systemctl enable docker.service
+
+$sudo systemctl status docker.service
+````
+
+
+#### Install Docker CE
 ```
 $sudo subscription-manager register --auto-attach
 
