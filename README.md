@@ -39,7 +39,7 @@ $sudo yum-config-manager --add-repo https://download.docker.com/linux/rhel/docke
 # CHANGE:
 # baseurl=https://download.docker.com/linux/rhel/7/$basearch/stable
 # To:
-# baseurl=https://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml
+# baseurl=https://download.docker.com/linux/centos/7/x86_64/stable
 
 $sudo yum install docker-ce docker-ce-cli containerd.io
 
