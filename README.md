@@ -80,7 +80,7 @@ $sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 
 #### TODO:
-1) Create docker base image of RHEL7<br/>
+1) Create custom docker base image of RHEL7<br/>
   1a) Create a full image using tar
 
   1b) Create a simple parent image using scratch
@@ -111,3 +111,8 @@ This is a CLI for use with OpenFaaS - a serverless functions framework for Docke
 $sudo /usr/bin/subscription-manager repos --enable=rhel-server-rhscl-7-rpms
 $sudo yum install devtoolset-7
 ```
+
+#### Add lessons learned using NVIDIA Docker
+
+#### Add lessons learned using Docker using Intel MIC architecture with Xeon Phi 
+
