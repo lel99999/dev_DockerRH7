@@ -114,5 +114,5 @@ $sudo yum install devtoolset-7
 
 #### Add lessons learned using NVIDIA Docker
 
-#### Add lessons learned using Docker using Intel MIC architecture with Xeon Phi 
+#### Add lessons learned using Docker using Intel MIC(Many Integrated Core) architecture with Xeon Phi 
 
