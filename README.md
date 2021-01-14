@@ -27,7 +27,7 @@ $sudo systemctl status docker.service
 
 #### Install Docker CE
 ```
-$sudo subscription-manager register --auto-attach
+$sudo subscription-manager register --username <username> --password <password> --auto-attach
 
 $sudo subscription-manager repos --enable=rhel-7-server-rpms --enable=rhel-7-server-extras-rpms --enable=rhel-7-server-optional-rpms
 
