@@ -50,7 +50,7 @@ $sudo yum list docker-ce --showduplicates | sort -r
 #### Create docker group and add user
 ```
 $sudo groupadd docker
-$sudo usermod -aG docker ${USER{}
+$sudo usermod -aG docker ${USER}
 ```
 
 #### Test Docker
