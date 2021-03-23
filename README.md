@@ -81,7 +81,16 @@ $sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 #### TODO:
 - [x] 1) Create custom docker base image of RHEL7 <br/>
-- [x]    1a) Create a full image using tar
+- [x]    1a) Create a full image using tar <br/>
+         1a.1) Download [https://github.com/docker/docker/blob/master/contrib/mkimage-yum.sh](https://github.com/docker/docker/blob/master/contrib/mkimage-yum.sh) <br/>
+         1a.2) Edit file and comment 2 lines, then add following line: <br/>
+         
+         #tar –numeric-owner -c -C “$target” . | docker import - $name:$version <br/>
+             
+         #docker run -i -t $name:$version echo success <br/>
+             
+         tar -czvf <filename>.tar.gz /<path_to_image> <br/>
+             
 - [x]    1b) Create a simple parent image using scratch
 - [x]    1c) Push image to hub.docker.io
 - [ ]    1d) Adding base image to Dockerfile using FROM command followed by base image name:<br/>
