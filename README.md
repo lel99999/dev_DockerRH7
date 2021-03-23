@@ -80,17 +80,31 @@ $sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 
 #### TODO:
-1) Create custom docker base image of RHEL7<br/>
-  1a) Create a full image using tar
+- [x] 1) Create custom docker base image of RHEL7 <br/>
+- [x]    1a) Create a full image using tar <br/>
+         1a.1) Download [https://github.com/docker/docker/blob/master/contrib/mkimage-yum.sh](https://github.com/docker/docker/blob/master/contrib/mkimage-yum.sh) <br/>
+         1a.2) Edit file and comment 2 lines, then add following line: <br/>
+         
+         #tar –numeric-owner -c -C “$target” . | docker import - $name:$version <br/>
+             
+         #docker run -i -t $name:$version echo success <br/>
+             
+         tar -czvf <filename>.tar.gz /<path_to_image> <br/>
+             
+- [x]    1b) Create a simple parent image using scratch <br/>
+         1b.1) Type following command to import image: <br/> 
+         $cat rhel7.9_docker.tar.gz | sudo docker import - UserID/rhel7.9 <br/>
+- [x]    1c) Push image to hub.docker.io <br/>
+- [ ]    1c1) Type following command to list local images: <br/>
+         $docker image ls <br/>
+         1c2) Type the following command to push to docker hub: <br/>
+         $docker image push REPOSITORY_NAME <br/>
+- [ ]    1d) Adding base image to Dockerfile using FROM command followed by base image name:<br/>
 
-  1b) Create a simple parent image using scratch
-
-
-  1e) Adding base image to Dockerfile using FROM command followed by base image name:<br/>
-   ```
+```
    # Filename: Dockerfile
    FROM node:test-alpha
-   ```<br/>
+```<br/>
 
 2) Copy source code and Wire up internal app to test
   2a) instruct Docker to copy source code during Docker build:
