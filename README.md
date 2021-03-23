@@ -80,17 +80,16 @@ $sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 
 #### TODO:
-1) Create custom docker base image of RHEL7<br/>
-  1a) Create a full image using tar
+- [x] 1) Create custom docker base image of RHEL7 <br/>
+- [x]    1a) Create a full image using tar
+- [x]    1b) Create a simple parent image using scratch
+- [x]    1c) Push image to hub.docker.io
+- [ ]    1d) Adding base image to Dockerfile using FROM command followed by base image name:<br/>
 
-  1b) Create a simple parent image using scratch
-
-
-  1e) Adding base image to Dockerfile using FROM command followed by base image name:<br/>
-   ```
+```
    # Filename: Dockerfile
    FROM node:test-alpha
-   ```<br/>
+```<br/>
 
 2) Copy source code and Wire up internal app to test
   2a) instruct Docker to copy source code during Docker build:
