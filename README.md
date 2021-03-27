@@ -95,6 +95,7 @@ $sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
          1b.1) Type following command to import image: <br/> 
          $cat rhel7.9_docker.tar.gz | sudo docker import - UserID/rhel7.9 <br/>
 - [x]    1c) Push image to hub.docker.io <br/>
+         clouddod/rhel7.9 <br/>
 - [ ]    1c1) Type following command to list local images: <br/>
          $docker image ls <br/>
          1c2) Type the following command to push to docker hub: <br/>
